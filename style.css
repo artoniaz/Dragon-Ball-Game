@@ -1,0 +1,399 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    max-width: 1600px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.txt {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.txt h1 {
+    font-size: 5rem;
+    margin: 2rem 0;
+}
+
+.txt h3, .txt p {
+    font-size: 2rem;
+}
+
+.txt h2 {
+    font-size: 3rem;
+    margin: 2rem 0;
+}
+
+.imgs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.imgs img {
+    width: 30vh;
+    height: 30vh;
+    cursor: pointer;
+}
+
+.imgs img.active {
+    box-shadow: 0 0 5rem 0 red;
+}
+
+.container button {
+    display: block;
+    margin: 4rem auto;
+    font-size: 3rem;
+    padding: 1rem 3rem;
+    background-color: white;
+    border: 4px solid black;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.container button.activeBtnAnim {
+    animation: buttonAnim 4s infinite;
+}
+
+.results {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2rem;
+}
+
+.results div:nth-of-type(1) {
+    width: 40%;
+}
+
+.winnerSpan {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.winnerSpan span#winner {
+    display: block;
+    color: green;
+    font-weight: 900;
+}
+
+footer {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: right;
+    font-size: 2rem;
+    padding: 1rem 3rem;
+}
+
+section.clock {
+    position: fixed;
+    bottom: 5rem;
+    right: 1rem;
+    text-align: center;
+    border: 2px solid black;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+#playerChoice, #aiChoice, #playerLastChoice {
+    font-weight: 900;
+}
+
+button:focus {
+    outline: 0
+}
+
+section.popUpAlert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(189, 195, 199, .8);
+    display: none;
+}
+
+div.popUp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 30vh;
+    background-color: black;
+    border: none;
+    color: white;
+    text-align: center;
+}
+
+div.popUp h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 2rem 0;
+    background-color: rgba(217, 30, 24, 1);
+}
+
+div.popUp p {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+div.popUp button {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 30%);
+    border: none;
+    display: block;
+    margin: 4rem auto;
+    font-size: 3rem;
+    padding: 1rem 3rem;
+    background-color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+div i {
+    font-size: 3rem;
+    position: absolute;
+    top: -12%;
+    right: -5%;
+    color: black;
+    cursor: pointer;
+}
+
+section.popUpActive{
+display: block;
+}
+
+div.redBar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 5px;
+    width: 100%;
+    background-color: red;
+}
+
+section.battle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+
+section.battle img:nth-child(1) {
+    width: 40%;
+    height: 60vh;
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+img.playerImg {
+    position: absolute;
+    left: 10%;
+    top: 100%;
+}
+
+img.aiImg {
+    position: absolute;
+    right: 10%;
+    top: 100%;
+}
+
+div.battleThunder {
+    background-image: url("./img/thunder.png");
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+}
+
+
+div.thunderAnim {
+    animation: thunderAnim 6s 3s forwards linear;
+}
+
+img.playerAnim {
+    animation: charactersAnim 0.5s 2s forwards ease-in;
+}
+
+img.aiAnim {
+    animation: charactersAnim 1s 2s forwards ease-in;
+}
+
+section.battle img:nth-child(1).ringAnim {
+    animation: ringAnim 0.6s 1.5s forwards ease-in;
+}
+
+section.bcgAnim {
+    animation: bcgAnim 1s 1s forwards linear;
+}
+
+div.redBarAnim {
+    animation: redBarAnim 1s backwards linear;
+}
+
+section.battleActive {
+    display: block;
+}
+
+@keyframes buttonAnim {
+    0% {
+        transform: none
+    }
+    89% {
+        transform: none
+    }
+    90% {
+        transform: translateX(-10%)
+    }
+    91% {
+        transform: translateX(10%)
+    }
+    92% {
+        transform: translateX(-10%)
+    }
+    93% {
+        transform: translateX(10%)
+    }
+    94% {
+        transform: translateX(-10%)
+    }
+    95% {
+        transform: translateX(10%)
+    }
+    96% {
+        transform: none
+    }
+    100% {
+        transform: none
+    }
+}
+
+@keyframes redBarAnim {
+    0% {
+    }
+    100% {
+        transform: translateX(100%)
+    }
+}
+
+@keyframes bcgAnim {
+    0% {
+        background-color: rgba(255, 255, 255, 255)
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 0.8)
+    }
+}
+
+@keyframes ringAnim {
+    0% {
+    }
+    100% {
+        top: 65%
+    }
+}
+
+@keyframes charactersAnim {
+    0% {
+    }
+    100% {
+        top: 20%
+    }
+}
+
+@keyframes thunderAnim {
+    0% {
+    }
+    1% {
+        opacity: 1
+    }
+    2% {
+        opacity: 0
+    }
+    3% {
+        opacity: 1
+    }
+    4% {
+        opacity: 0
+    }
+    5% {
+        opacity: 1
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+div.resultBanner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("./img/cloudsBcg.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 50%;
+    height: 50vh;
+    text-align: center;
+    color: black;
+    border-radius: 2%;
+    overflow: hidden;
+    display: none;
+}
+
+div.resulbcg {
+    background-size: cover;
+    background-position: center;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.resultBanner h1 {
+    font-size: 5rem;
+    margin-top: 13rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.resultBanner p {
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 0 2rem;
+}
+
+.resultBanner button {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 30%);
+    border: none;
+    display: block;
+    margin: 4rem auto;
+    font-size: 3rem;
+    padding: 1rem 3rem;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+}

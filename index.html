@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl-Pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Dragon Ball - game</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="redBar"></div>
+<div class="container">
+    <div class="txt">
+        <h1>Dragon Ball - gra</h1>
+        <h3>zasady gry</h3>
+        <p>Wybierz swoją postać i naciśnij przycisk "graj".<br>
+        Zmierz się z przeciwnikiem.</p>
+        <h2>wybierz pole</h2>
+    </div>
+    <div class="imgs">
+        <img src="./img/cell.png" alt="" title="cell" data-option="cell">
+        <img src="./img/songo.png" alt="" title="songo" data-option="songo">
+        <img src="./img/buu.png" alt="" title="buu" data-option="buu">
+    </div>
+
+    <button>graj!</button>
+
+    <section class="results">
+        <div>
+            <h2>Wybory w rozgrywce</h2>
+            <p>Twój aktualny wybór: <span id="playerChoice"></span></p>
+            <p>Twój ostatni wybór: <span id="playerLastChoice"></span></p>
+            <p>Ostatni wybór komputera: <span id="aiChoice"></span></p>
+        </div>
+        <div>
+            <h2>Statystyki</h2>
+            <p class="games">liczba gier: <span>0</span></p>
+            <p class="wins">wygranych: <span>0</span></p>
+            <p class="draws">remisów: <span>0</span></p>
+            <p class="losses">przegranych: <span>0</span></p>
+        </div>
+    </section>
+
+    <h1 class="winnerSpan">wynik ostatniej rozgrywki: <span id="winner">&nbsp</span></h1>
+
+    <section class="clock">
+        <p>zacznij grę w ciągu</p>
+        <p>---</p>
+    </section>
+</div>
+<footer>Artur Zarzycki, 2018</footer>
+
+<section class="popUpAlert">
+    <div class="popUp">
+        <h1>błąd!</h1>
+        <p></p>
+        <button class="closePopUp">ok!</button>
+        <i class="fas fa-times closePopUp"></i>
+    </div>
+</section>
+
+<section class="battle">
+    <img src="img/ring.png">
+    <img src="" class="playerImg">
+    <img src="" class="aiImg">
+    <div class="battleThunder"></div>
+    <div class="resultBanner">
+        <div class="resulbcg"> </div>
+            <h1>Porażka</h1>
+            <p>Zostałeś pokonany.</p>
+            <button>Walcz dalej!</button>
+    </div>
+
+</section>
+
+<script src="main.js"></script>
+</body>
+</html>
